@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import { ProtectedAdminRoute } from './components/ProtectedAdminRoute';
 import HomePage from './pages/HomePage';
 import CategoriesPage from './pages/CategoriesPage';
 import CategoryPage from './pages/CategoryPage';
@@ -67,15 +68,15 @@ function App() {
             <Route path="/returns-policy" element={<ReturnsPolicyPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
             <Route path="/terms" element={<TermsPage />} />
-            <Route path="/admin" element={<AdminHomePage />} />
-            <Route path="/admin/orders" element={<AdminOrdersPage />} />
-            <Route path="/admin/products" element={<AdminProductsPage />} />
-            <Route path="/admin/customers" element={<AdminCustomersPage />} />
-            <Route path="/admin/ambassadors" element={<AdminAmbassadorsPage />} />
-            <Route path="/admin/withdrawals" element={<AdminWithdrawalsPage />} />
-            <Route path="/admin/messages" element={<AdminMessagesPage />} />
-            <Route path="/admin/staff" element={<AdminStaffPage />} />
-            <Route path="/admin/settings" element={<AdminSettingsPage />} />
+            <Route path="/admin" element={<ProtectedAdminRoute><AdminHomePage /></ProtectedAdminRoute>} />
+            <Route path="/admin/orders" element={<ProtectedAdminRoute><AdminOrdersPage /></ProtectedAdminRoute>} />
+            <Route path="/admin/products" element={<ProtectedAdminRoute><AdminProductsPage /></ProtectedAdminRoute>} />
+            <Route path="/admin/customers" element={<ProtectedAdminRoute><AdminCustomersPage /></ProtectedAdminRoute>} />
+            <Route path="/admin/ambassadors" element={<ProtectedAdminRoute><AdminAmbassadorsPage /></ProtectedAdminRoute>} />
+            <Route path="/admin/withdrawals" element={<ProtectedAdminRoute><AdminWithdrawalsPage /></ProtectedAdminRoute>} />
+            <Route path="/admin/messages" element={<ProtectedAdminRoute><AdminMessagesPage /></ProtectedAdminRoute>} />
+            <Route path="/admin/staff" element={<ProtectedAdminRoute><AdminStaffPage /></ProtectedAdminRoute>} />
+            <Route path="/admin/settings" element={<ProtectedAdminRoute><AdminSettingsPage /></ProtectedAdminRoute>} />
           </Routes>
         </main>
 
